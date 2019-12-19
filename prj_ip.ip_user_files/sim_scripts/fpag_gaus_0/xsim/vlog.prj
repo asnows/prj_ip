@@ -1,0 +1,43 @@
+verilog xil_defaultlib  \
+"../../../ipstatic/hdl/verilog/AXIvideo2Mat.v" \
+"../../../ipstatic/hdl/verilog/fifo_w8_d2_A.v" \
+"../../../ipstatic/hdl/verilog/fifo_w32_d2_A.v" \
+"../../../ipstatic/hdl/verilog/Filter2D.v" \
+"../../../ipstatic/hdl/verilog/Filter2D_k_buf_0_xdS.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_dcmp_64wdI.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_ddiv_64vdy.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_dmul_64udo.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_faddfsuocq.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_fdiv_32pcA.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_fexp_32tde.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_fpext_3sc4.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_fptruncrcU.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_mac_mulDeQ.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_mac_mulEe0.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_mac_mulFfa.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_mac_mullbW.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_mul_41nibs.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_mul_44njbC.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_mul_45nkbM.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_mul_mulCeG.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_mul_mulmb6.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_mux_32_Bew.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_sitofp_qcK.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus_uitofp_Aem.v" \
+"../../../ipstatic/hdl/verilog/GaussianBlur.v" \
+"../../../ipstatic/hdl/verilog/getGaussianKernel.v" \
+"../../../ipstatic/hdl/verilog/getGaussianKernelncg.v" \
+"../../../ipstatic/hdl/verilog/Mat2AXIvideo.v" \
+"../../../ipstatic/hdl/verilog/pow_generic_float_s.v" \
+"../../../ipstatic/hdl/verilog/pow_generic_floatbkb.v" \
+"../../../ipstatic/hdl/verilog/pow_generic_floatcud.v" \
+"../../../ipstatic/hdl/verilog/pow_generic_floatdEe.v" \
+"../../../ipstatic/hdl/verilog/pow_generic_floateOg.v" \
+"../../../ipstatic/hdl/verilog/pow_generic_floatfYi.v" \
+"../../../ipstatic/hdl/verilog/pow_generic_floatg8j.v" \
+"../../../ipstatic/hdl/verilog/pow_generic_floathbi.v" \
+"../../../ipstatic/hdl/verilog/fpag_gaus.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

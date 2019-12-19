@@ -1,0 +1,1 @@
+vopt -64 +acc -l elaborate.log -L fifo_generator_v13_2_2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -work xil_defaultlib xil_defaultlib.fifo_maxtrix3x3_2 xil_defaultlib.glbl -o fifo_maxtrix3x3_2_opt

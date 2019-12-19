@@ -1,0 +1,1371 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Aug 26 15:04:03 2019" VIVADOVERSION="2018.1">
+
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="canny_bd" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" LEFT="7" NAME="s_axis_0_tdata" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="I" NAME="s_axis_0_tlast" SIGIS="undef"/>
+    <PORT DIR="I" NAME="s_axis_0_tuser" SIGIS="undef"/>
+    <PORT DIR="I" NAME="s_axis_0_tvalid" SIGIS="undef"/>
+    <PORT DIR="O" NAME="s_axis_0_tready" SIGIS="undef"/>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axis_aclk_0" SIGIS="clk" SIGNAME="External_Ports_s_axis_aclk_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="s_axis_aclk"/>
+        <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="s_axis_aclk"/>
+        <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="s_axis_aclk"/>
+        <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="s_axis_aclk"/>
+        <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="s_axis_aclk"/>
+        <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="s_axis_aclk"/>
+        <CONNECTION INSTANCE="img_edge_cut_0" PORT="s_axis_aclk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="sobel_edge_selelct" SIGIS="undef" SIGNAME="External_Ports_sobel_edge_selelct">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="edge_selelct"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="canny_NonMaxSupp_en" SIGIS="undef" SIGNAME="External_Ports_canny_NonMaxSupp_en">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="enable"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="img_edge_cut_en" SIGIS="undef" SIGNAME="External_Ports_img_edge_cut_en">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="img_edge_cut_0" PORT="enable"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="canny_maxVal" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_canny_maxVal">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="maxVal"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="canny_minVal" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_canny_minVal">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="minVal"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="m_axis_0_tdata" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="0" NAME="m_axis_0_tkeep" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" NAME="m_axis_0_tlast" SIGIS="undef"/>
+    <PORT DIR="O" NAME="m_axis_0_tuser" SIGIS="undef"/>
+    <PORT DIR="O" NAME="m_axis_0_tvalid" SIGIS="undef"/>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES>
+    <BUSINTERFACE BUSNAME="External_Interface_s_axis_0" NAME="s_axis_0" TYPE="TARGET">
+      <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+      <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+      <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+      <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+      <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+      <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+      <PARAMETER NAME="PHASE" VALUE="0.000"/>
+      <PARAMETER NAME="CLK_DOMAIN" VALUE="canny_bd_s_axis_aclk_0"/>
+      <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_0_tdata"/>
+        <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_0_tlast"/>
+        <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_0_tuser"/>
+        <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_0_tvalid"/>
+        <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_0_tready"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="img_edge_cut_0_m_axis" NAME="m_axis_0" TYPE="INITIATOR">
+      <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+      <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+      <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+      <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+      <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
+      <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+      <PARAMETER NAME="PHASE" VALUE="0.000"/>
+      <PARAMETER NAME="CLK_DOMAIN"/>
+      <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_0_tdata"/>
+        <PORTMAP LOGICAL="TKEEP" PHYSICAL="m_axis_0_tkeep"/>
+        <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_0_tlast"/>
+        <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_0_tuser"/>
+        <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_0_tvalid"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+  </EXTERNALINTERFACES>
+
+  <MODULES>
+    <MODULE FULLNAME="/canny_HystThreshold_0" HWVERSION="1.0" INSTANCE="canny_HystThreshold_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="canny_HystThreshold" VLNV="xilinx.com:user:canny_HystThreshold:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DATA_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="IMG_WIDTH" VALUE="640"/>
+        <PARAMETER NAME="Component_Name" VALUE="canny_bd_canny_HystThreshold_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axis_aclk" SIGIS="clk" SIGNAME="External_Ports_s_axis_aclk_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="s_axis_aclk_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix0_tlast" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix0_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="m_axis_line_buff_0_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix0_tuser" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix0_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="m_axis_line_buff_0_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix0_tvalid" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix0_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="m_axis_line_buff_0_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="s_axis_matrix0_tdata" RIGHT="0" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix0_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="m_axis_line_buff_0_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix1_tlast" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix1_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="m_axis_line_buff_1_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix1_tuser" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix1_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="m_axis_line_buff_1_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix1_tvalid" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix1_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="m_axis_line_buff_1_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="s_axis_matrix1_tdata" RIGHT="0" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix1_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="m_axis_line_buff_1_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix2_tlast" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix2_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="m_axis_line_buff_2_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix2_tuser" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix2_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="m_axis_line_buff_2_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix2_tvalid" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix2_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="m_axis_line_buff_2_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="s_axis_matrix2_tdata" RIGHT="0" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix2_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="m_axis_line_buff_2_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_tlast" SIGIS="undef" SIGNAME="canny_HystThreshold_0_m_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="img_edge_cut_0" PORT="s_axis_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_tuser" SIGIS="undef" SIGNAME="canny_HystThreshold_0_m_axis_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="img_edge_cut_0" PORT="s_axis_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="canny_HystThreshold_0_m_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="img_edge_cut_0" PORT="s_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_test_tdata" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="canny_HystThreshold_0_m_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="img_edge_cut_0" PORT="s_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="canny_HystThreshold_0_m_axis" NAME="m_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_CannyNMS_0_m_axis_line_buff_0" NAME="s_axis_matrix0" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_matrix0_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_matrix0_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_matrix0_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_matrix0_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_CannyNMS_0_m_axis_line_buff_1" NAME="s_axis_matrix1" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_matrix1_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_matrix1_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_matrix1_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_matrix1_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_CannyNMS_0_m_axis_line_buff_2" NAME="s_axis_matrix2" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_matrix2_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_matrix2_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_matrix2_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_matrix2_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE FULLNAME="/canny_NonMaxSupp_0" HWVERSION="1.0" INSTANCE="canny_NonMaxSupp_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="canny_NonMaxSupp" VLNV="xilinx.com:user:canny_NonMaxSupp:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DATA_WIDTH" VALUE="13"/>
+        <PARAMETER NAME="Component_Name" VALUE="canny_bd_canny_NonMaxSupp_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axis_aclk" SIGIS="clk" SIGNAME="External_Ports_s_axis_aclk_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="s_axis_aclk_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="enable" SIGIS="undef" SIGNAME="External_Ports_canny_NonMaxSupp_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="canny_NonMaxSupp_en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="maxVal" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_canny_maxVal">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="canny_maxVal"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="minVal" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_canny_minVal">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="canny_minVal"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix0_tlast" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix0_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="m_axis_line_buff_0_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix0_tuser" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix0_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="m_axis_line_buff_0_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix0_tvalid" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix0_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="m_axis_line_buff_0_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="12" NAME="s_axis_matrix0_tdata" RIGHT="0" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix0_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="m_axis_line_buff_0_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix1_tlast" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix1_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="m_axis_line_buff_1_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix1_tuser" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix1_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="m_axis_line_buff_1_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix1_tvalid" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix1_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="m_axis_line_buff_1_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="12" NAME="s_axis_matrix1_tdata" RIGHT="0" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix1_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="m_axis_line_buff_1_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix2_tlast" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix2_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="m_axis_line_buff_2_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix2_tuser" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix2_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="m_axis_line_buff_2_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix2_tvalid" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix2_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="m_axis_line_buff_2_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="12" NAME="s_axis_matrix2_tdata" RIGHT="0" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix2_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="m_axis_line_buff_2_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_tlast" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_m_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="s_axis_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_tuser" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_m_axis_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="s_axis_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_m_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="s_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="m_test_tdata" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="1" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_m_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_CannyNMS_0" PORT="s_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="canny_NonMaxSupp_0_m_axis" NAME="m_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_SobelDir_0_m_axis_line_buff_0" NAME="s_axis_matrix0" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_matrix0_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_matrix0_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_matrix0_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_matrix0_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_SobelDir_0_m_axis_line_buff_1" NAME="s_axis_matrix1" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_matrix1_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_matrix1_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_matrix1_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_matrix1_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_SobelDir_0_m_axis_line_buff_2" NAME="s_axis_matrix2" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_matrix2_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_matrix2_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_matrix2_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_matrix2_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE FULLNAME="/img_edge_cut_0" HWVERSION="1.0" INSTANCE="img_edge_cut_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="img_edge_cut" VLNV="xilinx.com:user:img_edge_cut:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CUT_COLUMN" VALUE="1"/>
+        <PARAMETER NAME="CUT_ROW" VALUE="1"/>
+        <PARAMETER NAME="DATA_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="IMG_WIDTH" VALUE="640"/>
+        <PARAMETER NAME="IMG_HEIGHT" VALUE="480"/>
+        <PARAMETER NAME="Component_Name" VALUE="canny_bd_img_edge_cut_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axis_aclk" SIGIS="clk" SIGNAME="External_Ports_s_axis_aclk_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="s_axis_aclk_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_tlast" SIGIS="undef" SIGNAME="canny_HystThreshold_0_m_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="m_axis_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_tuser" SIGIS="undef" SIGNAME="canny_HystThreshold_0_m_axis_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="m_axis_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="canny_HystThreshold_0_m_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="m_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="canny_HystThreshold_0_m_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="m_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="enable" SIGIS="undef" SIGNAME="External_Ports_img_edge_cut_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="img_edge_cut_en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="m_axis_tkeep" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_tlast" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_tuser" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="img_edge_cut_0_m_axis" NAME="m_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_tdata"/>
+            <PORTMAP LOGICAL="TKEEP" PHYSICAL="m_axis_tkeep"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="canny_HystThreshold_0_m_axis" NAME="s_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="canny_bd_s_axis_aclk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE FULLNAME="/maxtri3x3_CannyNMS_0" HWVERSION="1.0" INSTANCE="maxtri3x3_CannyNMS_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="maxtri3x3_CannyNMS" VLNV="xilinx.com:user:maxtri3x3_CannyNMS:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DATA_WIDTH" VALUE="2"/>
+        <PARAMETER NAME="IMG_HEIGHT" VALUE="480"/>
+        <PARAMETER NAME="Component_Name" VALUE="canny_bd_maxtri3x3_CannyNMS_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axis_aclk" SIGIS="clk" SIGNAME="External_Ports_s_axis_aclk_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="s_axis_aclk_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_m_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="m_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_tlast" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_m_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="m_axis_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_tuser" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_m_axis_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="m_axis_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_m_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="m_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_line_buff_0_tlast" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix0_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="s_axis_matrix0_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_0_tuser" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix0_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="s_axis_matrix0_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_0_tvalid" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix0_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="s_axis_matrix0_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="m_axis_line_buff_0_tdata" RIGHT="0" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix0_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="s_axis_matrix0_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_1_tlast" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix1_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="s_axis_matrix1_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_1_tuser" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix1_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="s_axis_matrix1_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_1_tvalid" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix1_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="s_axis_matrix1_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="m_axis_line_buff_1_tdata" RIGHT="0" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix1_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="s_axis_matrix1_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_2_tlast" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix2_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="s_axis_matrix2_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_2_tuser" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix2_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="s_axis_matrix2_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_2_tvalid" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix2_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="s_axis_matrix2_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="m_axis_line_buff_2_tdata" RIGHT="0" SIGIS="undef" SIGNAME="canny_HystThreshold_0_s_axis_matrix2_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_HystThreshold_0" PORT="s_axis_matrix2_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="maxtri3x3_CannyNMS_0_m_axis_line_buff_0" NAME="m_axis_line_buff_0" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_line_buff_0_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_line_buff_0_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_line_buff_0_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_line_buff_0_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_CannyNMS_0_m_axis_line_buff_1" NAME="m_axis_line_buff_1" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_line_buff_1_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_line_buff_1_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_line_buff_1_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_line_buff_1_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_CannyNMS_0_m_axis_line_buff_2" NAME="m_axis_line_buff_2" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_line_buff_2_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_line_buff_2_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_line_buff_2_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_line_buff_2_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="canny_NonMaxSupp_0_m_axis" NAME="s_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="canny_bd_s_axis_aclk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE FULLNAME="/maxtri3x3_SobelDir_0" HWVERSION="1.0" INSTANCE="maxtri3x3_SobelDir_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="maxtri3x3_SobelDir" VLNV="xilinx.com:user:maxtri3x3_SobelDir:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DATA_WIDTH" VALUE="13"/>
+        <PARAMETER NAME="IMG_HEIGHT" VALUE="480"/>
+        <PARAMETER NAME="Component_Name" VALUE="canny_bd_maxtri3x3_SobelDir_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axis_aclk" SIGIS="clk" SIGNAME="External_Ports_s_axis_aclk_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="s_axis_aclk_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="12" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="maxtri3x3_SobelDir_0_s_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="m_axis_dir_GxGy_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_tlast" SIGIS="undef" SIGNAME="maxtri3x3_SobelDir_0_s_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="m_axis_dir_GxGy_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_tuser" SIGIS="undef" SIGNAME="maxtri3x3_SobelDir_0_s_axis_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="m_axis_dir_GxGy_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="maxtri3x3_SobelDir_0_s_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="m_axis_dir_GxGy_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_line_buff_0_tlast" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix0_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="s_axis_matrix0_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_0_tuser" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix0_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="s_axis_matrix0_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_0_tvalid" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix0_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="s_axis_matrix0_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="12" NAME="m_axis_line_buff_0_tdata" RIGHT="0" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix0_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="s_axis_matrix0_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_1_tlast" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix1_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="s_axis_matrix1_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_1_tuser" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix1_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="s_axis_matrix1_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_1_tvalid" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix1_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="s_axis_matrix1_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="12" NAME="m_axis_line_buff_1_tdata" RIGHT="0" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix1_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="s_axis_matrix1_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_2_tlast" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix2_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="s_axis_matrix2_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_2_tuser" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix2_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="s_axis_matrix2_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_2_tvalid" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix2_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="s_axis_matrix2_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="12" NAME="m_axis_line_buff_2_tdata" RIGHT="0" SIGIS="undef" SIGNAME="canny_NonMaxSupp_0_s_axis_matrix2_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="canny_NonMaxSupp_0" PORT="s_axis_matrix2_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="maxtri3x3_SobelDir_0_m_axis_line_buff_0" NAME="m_axis_line_buff_0" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_line_buff_0_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_line_buff_0_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_line_buff_0_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_line_buff_0_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_SobelDir_0_m_axis_line_buff_1" NAME="m_axis_line_buff_1" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_line_buff_1_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_line_buff_1_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_line_buff_1_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_line_buff_1_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_SobelDir_0_m_axis_line_buff_2" NAME="m_axis_line_buff_2" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_line_buff_2_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_line_buff_2_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_line_buff_2_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_line_buff_2_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="sobel3x3_algorithm_0_m_axis_dir_GxGy" NAME="s_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="canny_bd_s_axis_aclk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE FULLNAME="/maxtri3x3_shift_0" HWVERSION="1.0" INSTANCE="maxtri3x3_shift_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="maxtri3x3_shift" VLNV="xilinx.com:user:maxtri3x3_shift:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DATA_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="IMG_HEIGHT" VALUE="480"/>
+        <PARAMETER NAME="Component_Name" VALUE="canny_bd_maxtri3x3_shift_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axis_aclk" SIGIS="clk" SIGNAME="External_Ports_s_axis_aclk_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="s_axis_aclk_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_axis_tlast" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_axis_tuser" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef"/>
+        <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_line_buff_0_tlast" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_0_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="s_axis_matrix0_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_0_tuser" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_0_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="s_axis_matrix0_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_0_tvalid" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_0_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="s_axis_matrix0_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="m_axis_line_buff_0_tdata" RIGHT="0" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_0_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="s_axis_matrix0_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_1_tlast" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_1_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="s_axis_matrix1_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_1_tuser" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_1_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="s_axis_matrix1_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_1_tvalid" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_1_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="s_axis_matrix1_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="m_axis_line_buff_1_tdata" RIGHT="0" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_1_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="s_axis_matrix1_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_2_tlast" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_2_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="s_axis_matrix2_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_2_tuser" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_2_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="s_axis_matrix2_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_2_tvalid" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_2_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="s_axis_matrix2_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="m_axis_line_buff_2_tdata" RIGHT="0" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_2_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel3x3_algorithm_0" PORT="s_axis_matrix2_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="maxtri3x3_shift_0_m_axis_line_buff_0" NAME="m_axis_line_buff_0" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_line_buff_0_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_line_buff_0_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_line_buff_0_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_line_buff_0_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_shift_0_m_axis_line_buff_1" NAME="m_axis_line_buff_1" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_line_buff_1_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_line_buff_1_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_line_buff_1_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_line_buff_1_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_shift_0_m_axis_line_buff_2" NAME="m_axis_line_buff_2" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_line_buff_2_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_line_buff_2_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_line_buff_2_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_line_buff_2_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="External_Interface_s_axis_0" NAME="s_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="canny_bd_s_axis_aclk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE FULLNAME="/sobel3x3_algorithm_0" HWVERSION="1.0" INSTANCE="sobel3x3_algorithm_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="sobel3x3_algorithm" VLNV="xilinx.com:user:sobel3x3_algorithm:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="TDATA_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="IMG_WIDTH" VALUE="640"/>
+        <PARAMETER NAME="IMG_HEIGHT" VALUE="480"/>
+        <PARAMETER NAME="Component_Name" VALUE="canny_bd_sobel3x3_algorithm_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axis_aclk" SIGIS="clk" SIGNAME="External_Ports_s_axis_aclk_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="s_axis_aclk_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="edge_selelct" SIGIS="undef" SIGNAME="External_Ports_sobel_edge_selelct">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sobel_edge_selelct"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix0_tlast" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_0_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_0_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix0_tuser" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_0_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_0_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix0_tvalid" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_0_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_0_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="s_axis_matrix0_tdata" RIGHT="0" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_0_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_0_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix1_tlast" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_1_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_1_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix1_tuser" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_1_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_1_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix1_tvalid" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_1_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_1_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="s_axis_matrix1_tdata" RIGHT="0" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_1_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_1_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix2_tlast" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_2_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_2_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix2_tuser" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_2_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_2_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_matrix2_tvalid" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_2_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_2_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="s_axis_matrix2_tdata" RIGHT="0" SIGIS="undef" SIGNAME="maxtri3x3_shift_0_m_axis_line_buff_2_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_2_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_Gx_tlast" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_Gx_tuser" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_Gx_tvalid" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="m_axis_Gx_tdata" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_Gy_tlast" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_Gy_tuser" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_Gy_tvalid" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="m_axis_Gy_tdata" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_GxGy_tlast" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_GxGy_tuser" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_GxGy_tvalid" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="m_axis_GxGy_tdata" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_dir_GxGy_tlast" SIGIS="undef" SIGNAME="maxtri3x3_SobelDir_0_s_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="s_axis_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_dir_GxGy_tuser" SIGIS="undef" SIGNAME="maxtri3x3_SobelDir_0_s_axis_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="s_axis_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_dir_GxGy_tvalid" SIGIS="undef" SIGNAME="maxtri3x3_SobelDir_0_s_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="s_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="12" NAME="m_axis_dir_GxGy_tdata" RIGHT="0" SIGIS="undef" SIGNAME="maxtri3x3_SobelDir_0_s_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_SobelDir_0" PORT="s_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_raw_tlast" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_raw_tuser" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_raw_tvalid" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="m_axis_raw_tdata" RIGHT="0" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="m_axis_Gx" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_Gx_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_Gx_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_Gx_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_Gx_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="m_axis_GxGy" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_GxGy_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_GxGy_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_GxGy_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_GxGy_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="m_axis_Gy" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_Gy_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_Gy_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_Gy_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_Gy_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="sobel3x3_algorithm_0_m_axis_dir_GxGy" NAME="m_axis_dir_GxGy" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_dir_GxGy_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_dir_GxGy_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_dir_GxGy_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_dir_GxGy_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="m_axis_raw" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_raw_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_raw_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_raw_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_raw_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_shift_0_m_axis_line_buff_0" NAME="s_axis_matrix0" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_matrix0_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_matrix0_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_matrix0_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_matrix0_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_shift_0_m_axis_line_buff_1" NAME="s_axis_matrix1" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_matrix1_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_matrix1_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_matrix1_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_matrix1_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_shift_0_m_axis_line_buff_2" NAME="s_axis_matrix2" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_matrix2_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_matrix2_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_matrix2_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_matrix2_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

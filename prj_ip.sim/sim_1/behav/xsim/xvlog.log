@@ -1,0 +1,122 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/AXIvideo2Mat.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AXIvideo2Mat
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fifo_w8_d2_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_w8_d2_A_shiftReg
+INFO: [VRFC 10-311] analyzing module fifo_w8_d2_A
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fifo_w32_d2_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_w32_d2_A_shiftReg
+INFO: [VRFC 10-311] analyzing module fifo_w32_d2_A
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/Filter2D.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Filter2D
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/Filter2D_k_buf_0_xdS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Filter2D_k_buf_0_xdS_ram
+INFO: [VRFC 10-311] analyzing module Filter2D_k_buf_0_xdS
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_dcmp_64wdI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_dcmp_64wdI
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_ddiv_64vdy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_ddiv_64vdy
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_dmul_64udo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_dmul_64udo
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_faddfsuocq.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_faddfsuocq
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_fdiv_32pcA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_fdiv_32pcA
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_fexp_32tde.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_fexp_32tde
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_fpext_3sc4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_fpext_3sc4
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_fptruncrcU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_fptruncrcU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_mac_mulDeQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mac_mulDeQ_DSP48_3
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mac_mulDeQ
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_mac_mulEe0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mac_mulEe0_DSP48_4
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mac_mulEe0
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_mac_mulFfa.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mac_mulFfa_DSP48_5
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mac_mulFfa
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_mac_mullbW.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mac_mullbW_DSP48_0
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mac_mullbW
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_mul_41nibs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mul_41nibs_MulnS_0
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mul_41nibs
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_mul_44njbC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mul_44njbC_MulnS_1
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mul_44njbC
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_mul_45nkbM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mul_45nkbM_MulnS_2
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mul_45nkbM
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_mul_mulCeG.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mul_mulCeG_DSP48_2
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mul_mulCeG
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_mul_mulmb6.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mul_mulmb6_DSP48_1
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mul_mulmb6
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_mux_32_Bew.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_mux_32_Bew
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_sitofp_qcK.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_sitofp_qcK
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus_uitofp_Aem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus_uitofp_Aem
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/GaussianBlur.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module GaussianBlur
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/getGaussianKernel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module getGaussianKernel
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/getGaussianKernelncg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module getGaussianKernelncg_ram
+INFO: [VRFC 10-311] analyzing module getGaussianKernelncg
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/Mat2AXIvideo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mat2AXIvideo
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/pow_generic_float_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pow_generic_float_s
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/pow_generic_floatbkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pow_generic_floatbkb_rom
+INFO: [VRFC 10-311] analyzing module pow_generic_floatbkb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/pow_generic_floatcud.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pow_generic_floatcud_rom
+INFO: [VRFC 10-311] analyzing module pow_generic_floatcud
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/pow_generic_floatdEe.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pow_generic_floatdEe_rom
+INFO: [VRFC 10-311] analyzing module pow_generic_floatdEe
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/pow_generic_floateOg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pow_generic_floateOg_rom
+INFO: [VRFC 10-311] analyzing module pow_generic_floateOg
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/pow_generic_floatfYi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pow_generic_floatfYi_rom
+INFO: [VRFC 10-311] analyzing module pow_generic_floatfYi
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/pow_generic_floatg8j.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pow_generic_floatg8j_rom
+INFO: [VRFC 10-311] analyzing module pow_generic_floatg8j
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/pow_generic_floathbi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pow_generic_floathbi_rom
+INFO: [VRFC 10-311] analyzing module pow_generic_floathbi
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.ip_user_files/ipstatic/hdl/verilog/fpag_gaus.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fpag_gaus
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sources_1/ip/fifo_maxtrix3x3/sim/fifo_maxtrix3x3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_maxtrix3x3
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sources_1/ip_package/ip_sift/ip_dog_phr/dog_phr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dog_phr
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sources_1/ip_package/ip_sift/ip_gaus_phr_hls/hls_gauss_phr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hls_gauss_phr
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sources_1/ip_package/ip_img_scale/img_scale.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module img_scale
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sources_1/ip_package/maxtri3x3_shift/maxtri3x3_shift.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module maxtri3x3_shift
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sim_1/new/read_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module read_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sim_1/new/sift_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sift_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sources_1/new/timing_excise.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module timing_excise
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sources_1/ip_package/img_cap/video_caputure.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module video_caputure
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sim_1/new/write_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module write_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sim_1/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_tb

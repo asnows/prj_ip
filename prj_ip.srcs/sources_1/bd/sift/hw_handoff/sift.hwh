@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Sep 25 11:05:30 2019" VIVADOVERSION="2018.1">
+
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="sift" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" LEFT="7" NAME="s_axis_0_tdata" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="I" NAME="s_axis_0_tlast" SIGIS="undef"/>
+    <PORT DIR="I" NAME="s_axis_0_tuser" SIGIS="undef"/>
+    <PORT DIR="I" NAME="s_axis_0_tvalid" SIGIS="undef"/>
+    <PORT DIR="O" NAME="s_axis_0_tready" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="47" NAME="m_axis_0_tdata" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" NAME="m_axis_0_tlast" SIGIS="undef"/>
+    <PORT DIR="O" NAME="m_axis_0_tuser" SIGIS="undef"/>
+    <PORT DIR="O" NAME="m_axis_0_tvalid" SIGIS="undef"/>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axis_aclk_0" SIGIS="clk" SIGNAME="External_Ports_s_axis_aclk_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="gauss_phr_0" PORT="s_axis_aclk"/>
+        <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="s_axis_aclk"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES>
+    <BUSINTERFACE BUSNAME="External_Interface_s_axis_0" NAME="s_axis_0" TYPE="TARGET">
+      <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+      <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+      <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+      <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+      <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+      <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+      <PARAMETER NAME="PHASE" VALUE="0.000"/>
+      <PARAMETER NAME="CLK_DOMAIN" VALUE="sift_s_axis_aclk_0"/>
+      <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_0_tdata"/>
+        <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_0_tlast"/>
+        <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_0_tuser"/>
+        <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_0_tvalid"/>
+        <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_0_tready"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="gauss_phr_0_m_axis" NAME="m_axis_0" TYPE="INITIATOR">
+      <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="6"/>
+      <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+      <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+      <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+      <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+      <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+      <PARAMETER NAME="PHASE" VALUE="0.000"/>
+      <PARAMETER NAME="CLK_DOMAIN"/>
+      <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_0_tdata"/>
+        <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_0_tlast"/>
+        <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_0_tuser"/>
+        <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_0_tvalid"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+  </EXTERNALINTERFACES>
+
+  <MODULES>
+    <MODULE FULLNAME="/gauss_phr_0" HWVERSION="1.0" INSTANCE="gauss_phr_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="gauss_phr" VLNV="xilinx.com:user:gauss_phr:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DATA_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="INTERVLS" VALUE="6"/>
+        <PARAMETER NAME="Component_Name" VALUE="sift_gauss_phr_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axis_aclk" SIGIS="clk" SIGNAME="External_Ports_s_axis_aclk_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="s_axis_aclk_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_0_tlast" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_0_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_0_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_0_tuser" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_0_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_0_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_0_tvalid" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_0_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_0_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="s_axis_0_tdata" RIGHT="0" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_0_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_0_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_1_tlast" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_1_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_1_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_1_tuser" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_1_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_1_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_1_tvalid" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_1_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_1_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="s_axis_1_tdata" RIGHT="0" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_1_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_1_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_2_tlast" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_2_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_2_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_2_tuser" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_2_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_2_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_2_tvalid" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_2_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_2_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="s_axis_2_tdata" RIGHT="0" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_2_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maxtri3x3_shift_0" PORT="m_axis_line_buff_2_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_tlast" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_tuser" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="47" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="gauss_phr_0_m_axis" NAME="m_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="6"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_shift_0_m_axis_line_buff_0" NAME="s_axis_0" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_0_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_0_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_0_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_0_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_shift_0_m_axis_line_buff_1" NAME="s_axis_1" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_1_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_1_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_1_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_1_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_shift_0_m_axis_line_buff_2" NAME="s_axis_2" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_2_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_2_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_2_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_2_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE FULLNAME="/maxtri3x3_shift_0" HWVERSION="1.0" INSTANCE="maxtri3x3_shift_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="maxtri3x3_shift" VLNV="xilinx.com:user:maxtri3x3_shift:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DATA_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="IMG_HEIGHT" VALUE="480"/>
+        <PARAMETER NAME="Component_Name" VALUE="sift_maxtri3x3_shift_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axis_aclk" SIGIS="clk" SIGNAME="External_Ports_s_axis_aclk_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="s_axis_aclk_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_axis_tlast" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_axis_tuser" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef"/>
+        <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_line_buff_0_tlast" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_0_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="gauss_phr_0" PORT="s_axis_0_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_0_tuser" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_0_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="gauss_phr_0" PORT="s_axis_0_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_0_tvalid" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_0_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="gauss_phr_0" PORT="s_axis_0_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="m_axis_line_buff_0_tdata" RIGHT="0" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_0_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="gauss_phr_0" PORT="s_axis_0_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_1_tlast" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_1_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="gauss_phr_0" PORT="s_axis_1_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_1_tuser" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_1_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="gauss_phr_0" PORT="s_axis_1_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_1_tvalid" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_1_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="gauss_phr_0" PORT="s_axis_1_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="m_axis_line_buff_1_tdata" RIGHT="0" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_1_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="gauss_phr_0" PORT="s_axis_1_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_2_tlast" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_2_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="gauss_phr_0" PORT="s_axis_2_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_2_tuser" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_2_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="gauss_phr_0" PORT="s_axis_2_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_line_buff_2_tvalid" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_2_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="gauss_phr_0" PORT="s_axis_2_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="m_axis_line_buff_2_tdata" RIGHT="0" SIGIS="undef" SIGNAME="gauss_phr_0_s_axis_2_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="gauss_phr_0" PORT="s_axis_2_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="maxtri3x3_shift_0_m_axis_line_buff_0" NAME="m_axis_line_buff_0" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_line_buff_0_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_line_buff_0_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_line_buff_0_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_line_buff_0_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_shift_0_m_axis_line_buff_1" NAME="m_axis_line_buff_1" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_line_buff_1_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_line_buff_1_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_line_buff_1_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_line_buff_1_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maxtri3x3_shift_0_m_axis_line_buff_2" NAME="m_axis_line_buff_2" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_line_buff_2_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_line_buff_2_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_line_buff_2_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_line_buff_2_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="External_Interface_s_axis_0" NAME="s_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="sift_s_axis_aclk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

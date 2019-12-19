@@ -1,0 +1,541 @@
+
+*** Running vivado
+    with args -log sift_gauss_phr_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source sift_gauss_phr_0_0.tcl
+
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source sift_gauss_phr_0_0.tcl -notrace
+Command: synth_design -top sift_gauss_phr_0_0 -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 2892 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 446.852 ; gain = 99.547
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'sift_gauss_phr_0_0' [e:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sources_1/bd/sift/ip/sift_gauss_phr_0_0/synth/sift_gauss_phr_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'gauss_phr' [e:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sources_1/bd/sift/ipshared/7852/gauss_phr.v:23]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter INTERVLS bound to: 6 - type: integer 
+	Parameter gaus_kernel_000 bound to: 19 - type: integer 
+	Parameter gaus_kernel_001 bound to: 32 - type: integer 
+	Parameter gaus_kernel_002 bound to: 19 - type: integer 
+	Parameter gaus_kernel_010 bound to: 32 - type: integer 
+	Parameter gaus_kernel_011 bound to: 52 - type: integer 
+	Parameter gaus_kernel_012 bound to: 32 - type: integer 
+	Parameter gaus_kernel_020 bound to: 19 - type: integer 
+	Parameter gaus_kernel_021 bound to: 32 - type: integer 
+	Parameter gaus_kernel_022 bound to: 19 - type: integer 
+	Parameter gaus_kernel_100 bound to: 22 - type: integer 
+	Parameter gaus_kernel_101 bound to: 31 - type: integer 
+	Parameter gaus_kernel_102 bound to: 22 - type: integer 
+	Parameter gaus_kernel_110 bound to: 31 - type: integer 
+	Parameter gaus_kernel_111 bound to: 43 - type: integer 
+	Parameter gaus_kernel_112 bound to: 31 - type: integer 
+	Parameter gaus_kernel_120 bound to: 22 - type: integer 
+	Parameter gaus_kernel_121 bound to: 31 - type: integer 
+	Parameter gaus_kernel_122 bound to: 22 - type: integer 
+	Parameter gaus_kernel_200 bound to: 24 - type: integer 
+	Parameter gaus_kernel_201 bound to: 30 - type: integer 
+	Parameter gaus_kernel_202 bound to: 24 - type: integer 
+	Parameter gaus_kernel_210 bound to: 30 - type: integer 
+	Parameter gaus_kernel_211 bound to: 37 - type: integer 
+	Parameter gaus_kernel_212 bound to: 30 - type: integer 
+	Parameter gaus_kernel_220 bound to: 24 - type: integer 
+	Parameter gaus_kernel_221 bound to: 30 - type: integer 
+	Parameter gaus_kernel_222 bound to: 24 - type: integer 
+	Parameter gaus_kernel_300 bound to: 26 - type: integer 
+	Parameter gaus_kernel_301 bound to: 30 - type: integer 
+	Parameter gaus_kernel_302 bound to: 26 - type: integer 
+	Parameter gaus_kernel_310 bound to: 30 - type: integer 
+	Parameter gaus_kernel_311 bound to: 34 - type: integer 
+	Parameter gaus_kernel_312 bound to: 30 - type: integer 
+	Parameter gaus_kernel_320 bound to: 26 - type: integer 
+	Parameter gaus_kernel_321 bound to: 30 - type: integer 
+	Parameter gaus_kernel_322 bound to: 26 - type: integer 
+	Parameter gaus_kernel_400 bound to: 27 - type: integer 
+	Parameter gaus_kernel_401 bound to: 29 - type: integer 
+	Parameter gaus_kernel_402 bound to: 27 - type: integer 
+	Parameter gaus_kernel_410 bound to: 29 - type: integer 
+	Parameter gaus_kernel_411 bound to: 32 - type: integer 
+	Parameter gaus_kernel_412 bound to: 29 - type: integer 
+	Parameter gaus_kernel_420 bound to: 27 - type: integer 
+	Parameter gaus_kernel_421 bound to: 29 - type: integer 
+	Parameter gaus_kernel_422 bound to: 27 - type: integer 
+	Parameter gaus_kernel_500 bound to: 27 - type: integer 
+	Parameter gaus_kernel_501 bound to: 29 - type: integer 
+	Parameter gaus_kernel_502 bound to: 27 - type: integer 
+	Parameter gaus_kernel_510 bound to: 29 - type: integer 
+	Parameter gaus_kernel_511 bound to: 30 - type: integer 
+	Parameter gaus_kernel_512 bound to: 29 - type: integer 
+	Parameter gaus_kernel_520 bound to: 27 - type: integer 
+	Parameter gaus_kernel_521 bound to: 29 - type: integer 
+	Parameter gaus_kernel_522 bound to: 27 - type: integer 
+	Parameter Total_00 bound to: 256 - type: integer 
+	Parameter Total_01 bound to: 255 - type: integer 
+	Parameter Total_02 bound to: 253 - type: integer 
+	Parameter Total_03 bound to: 258 - type: integer 
+	Parameter Total_04 bound to: 256 - type: integer 
+	Parameter Total_05 bound to: 254 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'gauss_phr' (1#1) [e:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sources_1/bd/sift/ipshared/7852/gauss_phr.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'sift_gauss_phr_0_0' (2#1) [e:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sources_1/bd/sift/ip/sift_gauss_phr_0_0/synth/sift_gauss_phr_0_0.v:57]
+WARNING: [Synth 8-3331] design gauss_phr has unconnected port s_axis_0_tlast
+WARNING: [Synth 8-3331] design gauss_phr has unconnected port s_axis_0_tuser
+WARNING: [Synth 8-3331] design gauss_phr has unconnected port s_axis_0_tvalid
+WARNING: [Synth 8-3331] design gauss_phr has unconnected port s_axis_2_tlast
+WARNING: [Synth 8-3331] design gauss_phr has unconnected port s_axis_2_tuser
+WARNING: [Synth 8-3331] design gauss_phr has unconnected port s_axis_2_tvalid
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 501.797 ; gain = 154.492
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 501.797 ; gain = 154.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 501.797 ; gain = 154.492
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 859.656 ; gain = 0.566
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 859.656 ; gain = 512.352
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 859.656 ; gain = 512.352
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 859.656 ; gain = 512.352
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 859.656 ; gain = 512.352
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               48 Bit    Registers := 3     
+	                2 Bit    Registers := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module gauss_phr 
+Detailed RTL Component Info : 
++---Registers : 
+	               48 Bit    Registers := 3     
+	                2 Bit    Registers := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+DSP Report: Generating DSP inst/gauss_smooth3_return4, operation Mode is: A*(B:0x1d).
+DSP Report: operator inst/gauss_smooth3_return4 is absorbed into DSP inst/gauss_smooth3_return4.
+DSP Report: Generating DSP p_0_out, operation Mode is: C+A*(B:0x1b).
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: operator inst/gauss_smooth3_return1 is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: PCIN+A*(B:0x1b).
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: operator inst/gauss_smooth3_return3 is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: PCIN+A*(B:0x1d).
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: operator inst/gauss_smooth3_return2 is absorbed into DSP p_0_out.
+DSP Report: Generating DSP inst/gauss_smooth3_return8, operation Mode is: A*(B:0x1d).
+DSP Report: operator inst/gauss_smooth3_return8 is absorbed into DSP inst/gauss_smooth3_return8.
+DSP Report: Generating DSP inst/gauss_smooth3_return5, operation Mode is: C+A*(B:0x1d).
+DSP Report: operator inst/gauss_smooth3_return5 is absorbed into DSP inst/gauss_smooth3_return5.
+DSP Report: operator inst/gauss_smooth3_return6 is absorbed into DSP inst/gauss_smooth3_return5.
+DSP Report: Generating DSP inst/gauss_smooth3_return5, operation Mode is: PCIN+A*(B:0x1b).
+DSP Report: operator inst/gauss_smooth3_return5 is absorbed into DSP inst/gauss_smooth3_return5.
+DSP Report: operator inst/gauss_smooth3_return7 is absorbed into DSP inst/gauss_smooth3_return5.
+DSP Report: Generating DSP inst/gauss_smooth3_return5, operation Mode is: PCIN+A*(B:0x1b).
+DSP Report: operator inst/gauss_smooth3_return5 is absorbed into DSP inst/gauss_smooth3_return5.
+DSP Report: operator inst/gauss_smooth3_return8 is absorbed into DSP inst/gauss_smooth3_return5.
+DSP Report: Generating DSP inst/gauss_smooth_return0, operation Mode is: C+A*(B:0x34).
+DSP Report: operator inst/gauss_smooth_return0 is absorbed into DSP inst/gauss_smooth_return0.
+DSP Report: operator inst/gauss_smooth_return5 is absorbed into DSP inst/gauss_smooth_return0.
+DSP Report: Generating DSP inst/gauss_smooth_return0, operation Mode is: C+A*(B:0x13).
+DSP Report: operator inst/gauss_smooth_return0 is absorbed into DSP inst/gauss_smooth_return0.
+DSP Report: operator inst/gauss_smooth_return3 is absorbed into DSP inst/gauss_smooth_return0.
+DSP Report: Generating DSP inst/gauss_smooth_return0, operation Mode is: C+A*(B:0x13).
+DSP Report: operator inst/gauss_smooth_return0 is absorbed into DSP inst/gauss_smooth_return0.
+DSP Report: operator inst/gauss_smooth_return1 is absorbed into DSP inst/gauss_smooth_return0.
+DSP Report: Generating DSP inst/gauss_smooth_return0, operation Mode is: PCIN+A*(B:0x13).
+DSP Report: operator inst/gauss_smooth_return0 is absorbed into DSP inst/gauss_smooth_return0.
+DSP Report: operator inst/gauss_smooth_return7 is absorbed into DSP inst/gauss_smooth_return0.
+DSP Report: Generating DSP inst/gauss_smooth_return0, operation Mode is: C+A*(B:0x13).
+DSP Report: operator inst/gauss_smooth_return0 is absorbed into DSP inst/gauss_smooth_return0.
+DSP Report: operator inst/gauss_smooth_return8 is absorbed into DSP inst/gauss_smooth_return0.
+DSP Report: Generating DSP inst/gauss_smooth4_return0, operation Mode is: PCIN+A*(B:0x1e).
+DSP Report: operator inst/gauss_smooth4_return0 is absorbed into DSP inst/gauss_smooth4_return0.
+DSP Report: operator inst/gauss_smooth4_return5 is absorbed into DSP inst/gauss_smooth4_return0.
+DSP Report: Generating DSP inst/gauss_smooth4_return0, operation Mode is: PCIN+(A:0x0):B.
+DSP Report: operator inst/gauss_smooth4_return0 is absorbed into DSP inst/gauss_smooth4_return0.
+DSP Report: Generating DSP inst/gauss_smooth2_return1, operation Mode is: A*(B:0x1a).
+DSP Report: operator inst/gauss_smooth2_return1 is absorbed into DSP inst/gauss_smooth2_return1.
+DSP Report: Generating DSP inst/gauss_smooth2_return0, operation Mode is: C+A*(B:0x1a).
+DSP Report: operator inst/gauss_smooth2_return0 is absorbed into DSP inst/gauss_smooth2_return0.
+DSP Report: operator inst/gauss_smooth2_return7 is absorbed into DSP inst/gauss_smooth2_return0.
+DSP Report: Generating DSP inst/gauss_smooth2_return0, operation Mode is: PCIN+A*(B:0x22).
+DSP Report: operator inst/gauss_smooth2_return0 is absorbed into DSP inst/gauss_smooth2_return0.
+DSP Report: operator inst/gauss_smooth2_return5 is absorbed into DSP inst/gauss_smooth2_return0.
+DSP Report: Generating DSP inst/gauss_smooth2_return0, operation Mode is: PCIN+A*(B:0x1a).
+DSP Report: operator inst/gauss_smooth2_return0 is absorbed into DSP inst/gauss_smooth2_return0.
+DSP Report: operator inst/gauss_smooth2_return3 is absorbed into DSP inst/gauss_smooth2_return0.
+DSP Report: Generating DSP inst/gauss_smooth2_return0, operation Mode is: PCIN+A*(B:0x1a).
+DSP Report: operator inst/gauss_smooth2_return0 is absorbed into DSP inst/gauss_smooth2_return0.
+DSP Report: operator inst/gauss_smooth2_return8 is absorbed into DSP inst/gauss_smooth2_return0.
+DSP Report: Generating DSP inst/gauss_smooth2_return0, operation Mode is: PCIN+A*(B:0x1e).
+DSP Report: operator inst/gauss_smooth2_return0 is absorbed into DSP inst/gauss_smooth2_return0.
+DSP Report: operator inst/gauss_smooth1_return2 is absorbed into DSP inst/gauss_smooth2_return0.
+DSP Report: Generating DSP inst/gauss_smooth1_return8, operation Mode is: A*(B:0x1e).
+DSP Report: operator inst/gauss_smooth1_return8 is absorbed into DSP inst/gauss_smooth1_return8.
+DSP Report: Generating DSP p_0_out, operation Mode is: C+A*(B:0x1e).
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: operator inst/gauss_smooth1_return4 is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: PCIN+A*(B:0x1e).
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: operator inst/gauss_smooth1_return6 is absorbed into DSP p_0_out.
+DSP Report: Generating DSP inst/gauss_smooth2_return0, operation Mode is: PCIN+(A:0x0):B.
+DSP Report: operator inst/gauss_smooth2_return0 is absorbed into DSP inst/gauss_smooth2_return0.
+DSP Report: Generating DSP inst/gauss_smooth1_return0, operation Mode is: C+A*(B:0x18).
+DSP Report: operator inst/gauss_smooth1_return0 is absorbed into DSP inst/gauss_smooth1_return0.
+DSP Report: operator inst/gauss_smooth1_return3 is absorbed into DSP inst/gauss_smooth1_return0.
+DSP Report: Generating DSP inst/gauss_smooth1_return0, operation Mode is: PCIN+A*(B:0x18).
+DSP Report: operator inst/gauss_smooth1_return0 is absorbed into DSP inst/gauss_smooth1_return0.
+DSP Report: operator inst/gauss_smooth1_return1 is absorbed into DSP inst/gauss_smooth1_return0.
+DSP Report: Generating DSP inst/gauss_smooth1_return0, operation Mode is: PCIN+A*(B:0x18).
+DSP Report: operator inst/gauss_smooth1_return0 is absorbed into DSP inst/gauss_smooth1_return0.
+DSP Report: operator inst/gauss_smooth1_return7 is absorbed into DSP inst/gauss_smooth1_return0.
+DSP Report: Generating DSP inst/gauss_smooth1_return0, operation Mode is: PCIN+A*(B:0x25).
+DSP Report: operator inst/gauss_smooth1_return0 is absorbed into DSP inst/gauss_smooth1_return0.
+DSP Report: operator inst/gauss_smooth1_return5 is absorbed into DSP inst/gauss_smooth1_return0.
+DSP Report: Generating DSP inst/gauss_smooth1_return0, operation Mode is: PCIN+A*(B:0x18).
+DSP Report: operator inst/gauss_smooth1_return0 is absorbed into DSP inst/gauss_smooth1_return0.
+DSP Report: operator inst/gauss_smooth1_return8 is absorbed into DSP inst/gauss_smooth1_return0.
+DSP Report: Generating DSP inst/gauss_smooth1_return0, operation Mode is: PCIN+A*(B:0x1e).
+DSP Report: operator inst/gauss_smooth1_return0 is absorbed into DSP inst/gauss_smooth1_return0.
+DSP Report: operator inst/gauss_smooth1_return2 is absorbed into DSP inst/gauss_smooth1_return0.
+DSP Report: Generating DSP inst/gauss_smooth0_return3, operation Mode is: A*(B:0x16).
+DSP Report: operator inst/gauss_smooth0_return3 is absorbed into DSP inst/gauss_smooth0_return3.
+DSP Report: Generating DSP inst/gauss_smooth0_return0, operation Mode is: C+A*(B:0x1f).
+DSP Report: operator inst/gauss_smooth0_return0 is absorbed into DSP inst/gauss_smooth0_return0.
+DSP Report: operator inst/gauss_smooth0_return2 is absorbed into DSP inst/gauss_smooth0_return0.
+DSP Report: Generating DSP inst/gauss_smooth0_return0, operation Mode is: PCIN+A*(B:0x1f).
+DSP Report: operator inst/gauss_smooth0_return0 is absorbed into DSP inst/gauss_smooth0_return0.
+DSP Report: operator inst/gauss_smooth0_return4 is absorbed into DSP inst/gauss_smooth0_return0.
+DSP Report: Generating DSP inst/gauss_smooth0_return0, operation Mode is: PCIN+A*(B:0x2b).
+DSP Report: operator inst/gauss_smooth0_return0 is absorbed into DSP inst/gauss_smooth0_return0.
+DSP Report: operator inst/gauss_smooth0_return5 is absorbed into DSP inst/gauss_smooth0_return0.
+DSP Report: Generating DSP inst/gauss_smooth0_return0, operation Mode is: PCIN+A*(B:0x16).
+DSP Report: operator inst/gauss_smooth0_return0 is absorbed into DSP inst/gauss_smooth0_return0.
+DSP Report: operator inst/gauss_smooth0_return7 is absorbed into DSP inst/gauss_smooth0_return0.
+DSP Report: Generating DSP inst/gauss_smooth0_return0, operation Mode is: PCIN+A*(B:0x1f).
+DSP Report: operator inst/gauss_smooth0_return0 is absorbed into DSP inst/gauss_smooth0_return0.
+DSP Report: operator inst/gauss_smooth0_return8 is absorbed into DSP inst/gauss_smooth0_return0.
+DSP Report: Generating DSP inst/gauss_smooth0_return0, operation Mode is: PCIN+A*(B:0x16).
+DSP Report: operator inst/gauss_smooth0_return0 is absorbed into DSP inst/gauss_smooth0_return0.
+DSP Report: operator inst/gauss_smooth0_return8 is absorbed into DSP inst/gauss_smooth0_return0.
+DSP Report: Generating DSP inst/gauss_smooth0_return0, operation Mode is: PCIN+A*(B:0x1f).
+DSP Report: operator inst/gauss_smooth0_return0 is absorbed into DSP inst/gauss_smooth0_return0.
+DSP Report: operator inst/gauss_smooth0_return6 is absorbed into DSP inst/gauss_smooth0_return0.
+DSP Report: Generating DSP inst/gauss_smooth0_return0, operation Mode is: PCIN+A*(B:0x16).
+DSP Report: operator inst/gauss_smooth0_return0 is absorbed into DSP inst/gauss_smooth0_return0.
+DSP Report: operator inst/gauss_smooth0_return1 is absorbed into DSP inst/gauss_smooth0_return0.
+WARNING: [Synth 8-3331] design sift_gauss_phr_0_0 has unconnected port s_axis_0_tlast
+WARNING: [Synth 8-3331] design sift_gauss_phr_0_0 has unconnected port s_axis_0_tuser
+WARNING: [Synth 8-3331] design sift_gauss_phr_0_0 has unconnected port s_axis_0_tvalid
+WARNING: [Synth 8-3331] design sift_gauss_phr_0_0 has unconnected port s_axis_2_tlast
+WARNING: [Synth 8-3331] design sift_gauss_phr_0_0 has unconnected port s_axis_2_tuser
+WARNING: [Synth 8-3331] design sift_gauss_phr_0_0 has unconnected port s_axis_2_tvalid
+INFO: [Synth 8-3886] merging instance 'inst/tdata1_dly_reg[8]' (FD) to 'inst/tdata1_dly_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata1_dly_reg[9]' (FD) to 'inst/tdata1_dly_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata1_dly_reg[10]' (FD) to 'inst/tdata1_dly_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata1_dly_reg[11]' (FD) to 'inst/tdata1_dly_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata1_dly_reg[12]' (FD) to 'inst/tdata1_dly_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata1_dly_reg[13]' (FD) to 'inst/tdata1_dly_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata1_dly_reg[14]' (FD) to 'inst/tdata1_dly_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata1_dly_reg[15]' (FD) to 'inst/tdata2_dly_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata0_dly_reg[8]' (FD) to 'inst/tdata2_dly_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata0_dly_reg[9]' (FD) to 'inst/tdata2_dly_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata0_dly_reg[10]' (FD) to 'inst/tdata2_dly_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata0_dly_reg[11]' (FD) to 'inst/tdata2_dly_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata0_dly_reg[12]' (FD) to 'inst/tdata2_dly_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata0_dly_reg[13]' (FD) to 'inst/tdata2_dly_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata0_dly_reg[14]' (FD) to 'inst/tdata2_dly_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata0_dly_reg[15]' (FD) to 'inst/tdata2_dly_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata2_dly_reg[8]' (FD) to 'inst/tdata2_dly_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata2_dly_reg[9]' (FD) to 'inst/tdata2_dly_reg[10]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata2_dly_reg[10]' (FD) to 'inst/tdata2_dly_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata2_dly_reg[11]' (FD) to 'inst/tdata2_dly_reg[12]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata2_dly_reg[12]' (FD) to 'inst/tdata2_dly_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata2_dly_reg[13]' (FD) to 'inst/tdata2_dly_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst/tdata2_dly_reg[14]' (FD) to 'inst/tdata2_dly_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/tdata2_dly_reg[15] )
+INFO: [Synth 8-3332] Sequential element (inst/tdata2_dly_reg[15]) is unused and will be removed from module sift_gauss_phr_0_0.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 859.656 ; gain = 512.352
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++-------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name        | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|gauss_phr          | A*(B:0x1d)      | 16     | 5      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | C+A*(B:0x1b)    | 16     | 5      | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x1b) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x1d) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | A*(B:0x1d)      | 16     | 5      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | C+A*(B:0x1d)    | 16     | 5      | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x1b) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x1b) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | C+A*(B:0x34)    | 16     | 6      | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|gauss_phr          | C+A*(B:0x13)    | 16     | 5      | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|gauss_phr          | C+A*(B:0x13)    | 16     | 5      | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x13) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | C+A*(B:0x13)    | 16     | 5      | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x1e) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|sift_gauss_phr_0_0 | PCIN+(A:0x0):B  | 30     | 16     | -      | -      | -1     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | A*(B:0x1a)      | 16     | 5      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | C+A*(B:0x1a)    | 16     | 5      | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x22) | 16     | 6      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x1a) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x1a) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x1e) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | A*(B:0x1e)      | 16     | 5      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | C+A*(B:0x1e)    | 16     | 5      | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x1e) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|sift_gauss_phr_0_0 | PCIN+(A:0x0):B  | 30     | 16     | -      | -      | -1     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | C+A*(B:0x18)    | 16     | 5      | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x18) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x18) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x25) | 16     | 6      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x18) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x1e) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | A*(B:0x16)      | 16     | 5      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | C+A*(B:0x1f)    | 16     | 5      | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x1f) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x2b) | 16     | 6      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x16) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x1f) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x16) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x1f) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|gauss_phr          | PCIN+A*(B:0x16) | 16     | 5      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++-------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 925.121 ; gain = 577.816
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 925.988 ; gain = 578.684
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 944.016 ; gain = 596.711
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 947.160 ; gain = 599.855
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 947.160 ; gain = 599.855
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 947.160 ; gain = 599.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 947.160 ; gain = 599.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 947.160 ; gain = 599.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 947.160 ; gain = 599.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |CARRY4    |    87|
+|2     |DSP48E1   |    20|
+|3     |DSP48E1_1 |     5|
+|4     |DSP48E1_2 |     2|
+|5     |DSP48E1_3 |     5|
+|6     |DSP48E1_4 |     4|
+|7     |DSP48E1_5 |     4|
+|8     |LUT1      |    40|
+|9     |LUT2      |   182|
+|10    |LUT3      |    63|
+|11    |LUT4      |    69|
+|12    |LUT5      |    30|
+|13    |LUT6      |    55|
+|14    |FDRE      |     6|
++------+----------+------+
+
+Report Instance Areas: 
++------+---------+----------+------+
+|      |Instance |Module    |Cells |
++------+---------+----------+------+
+|1     |top      |          |   572|
+|2     |  inst   |gauss_phr |   567|
++------+---------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 947.160 ; gain = 599.855
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:32 . Memory (MB): peak = 947.160 ; gain = 241.996
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 947.160 ; gain = 599.855
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 127 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+40 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 947.160 ; gain = 611.332
+INFO: [Common 17-1381] The checkpoint 'E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.runs/sift_gauss_phr_0_0_synth_1/sift_gauss_phr_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP e:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.srcs/sources_1/bd/sift/ip/sift_gauss_phr_0_0/sift_gauss_phr_0_0.xci
+INFO: [Common 17-1381] The checkpoint 'E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.runs/sift_gauss_phr_0_0_synth_1/sift_gauss_phr_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file sift_gauss_phr_0_0_utilization_synth.rpt -pb sift_gauss_phr_0_0_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 947.160 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 25 11:06:35 2019...

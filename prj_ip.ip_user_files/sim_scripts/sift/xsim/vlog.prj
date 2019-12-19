@@ -1,0 +1,11 @@
+verilog xil_defaultlib  \
+"../../../bd/sift/ipshared/7852/gauss_phr.v" \
+"../../../bd/sift/ip/sift_gauss_phr_0_0/sim/sift_gauss_phr_0_0.v" \
+"../../../bd/sift/ip/fifo_maxtrix3x3/sim/fifo_maxtrix3x3.v" \
+"../../../bd/sift/ipshared/aec8/maxtri3x3_shift.v" \
+"../../../bd/sift/ip/sift_maxtri3x3_shift_0_1/sim/sift_maxtri3x3_shift_0_1.v" \
+"../../../bd/sift/sim/sift.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Thu Aug 22 17:22:51 2019
+# Process ID: 12368
+# Current directory: E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.runs/fifo_SobelDir_synth_1
+# Command line: vivado.exe -log fifo_SobelDir.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fifo_SobelDir.tcl
+# Log file: E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.runs/fifo_SobelDir_synth_1/fifo_SobelDir.vds
+# Journal file: E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.runs/fifo_SobelDir_synth_1\vivado.jou
+#-----------------------------------------------------------
+source fifo_SobelDir.tcl -notrace

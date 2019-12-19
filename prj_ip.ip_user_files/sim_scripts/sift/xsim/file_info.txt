@@ -1,0 +1,7 @@
+gauss_phr.v,verilog,xil_defaultlib,../../../bd/sift/ipshared/7852/gauss_phr.v,
+sift_gauss_phr_0_0.v,verilog,xil_defaultlib,../../../bd/sift/ip/sift_gauss_phr_0_0/sim/sift_gauss_phr_0_0.v,
+fifo_maxtrix3x3.v,verilog,xil_defaultlib,../../../bd/sift/ip/fifo_maxtrix3x3/sim/fifo_maxtrix3x3.v,
+maxtri3x3_shift.v,verilog,xil_defaultlib,../../../bd/sift/ipshared/aec8/maxtri3x3_shift.v,
+sift_maxtri3x3_shift_0_1.v,verilog,xil_defaultlib,../../../bd/sift/ip/sift_maxtri3x3_shift_0_1/sim/sift_maxtri3x3_shift_0_1.v,
+sift.v,verilog,xil_defaultlib,../../../bd/sift/sim/sift.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Wed Sep 25 15:35:05 2019
+# Process ID: 12260
+# Current directory: E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.sim/sim_1/synth/timing/xsim
+# Command line: wbtcv.exe -mode batch -source E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.sim/sim_1/synth/timing/xsim/xsim.dir/timing_tb_time_synth/webtalk/xsim_webtalk.tcl -notrace
+# Log file: E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.sim/sim_1/synth/timing/xsim/webtalk.log
+# Journal file: E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.sim/sim_1/synth/timing/xsim\webtalk.jou
+#-----------------------------------------------------------
+source E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.sim/sim_1/synth/timing/xsim/xsim.dir/timing_tb_time_synth/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/WorkSpace/project/FPGA/prj_ip/prj_ip/prj_ip.sim/sim_1/synth/timing/xsim/xsim.dir/timing_tb_time_synth/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Sep 25 15:35:08 2019. For additional details about this file, please refer to the WebTalk help file at D:/Xilinx/Vivado/2018.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed Sep 25 15:35:08 2019...

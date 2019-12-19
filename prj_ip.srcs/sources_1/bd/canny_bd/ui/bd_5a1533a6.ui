@@ -1,0 +1,43 @@
+{
+   ExpandedHierarchyInLayout: "",
+   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
+#  -string -flagsOSRD
+preplace port m_axis_0 -pg 1 -y 190 -defaultsOSRD
+preplace port s_axis_aclk_0 -pg 1 -y 90 -defaultsOSRD
+preplace port img_edge_cut_en -pg 1 -y 290 -defaultsOSRD
+preplace port sobel_edge_selelct -pg 1 -y 160 -defaultsOSRD
+preplace port canny_NonMaxSupp_en -pg 1 -y 220 -defaultsOSRD
+preplace port s_axis_0 -pg 1 -y 70 -defaultsOSRD
+preplace portBus canny_maxVal -pg 1 -y 240 -defaultsOSRD
+preplace portBus canny_minVal -pg 1 -y 260 -defaultsOSRD
+preplace inst sobel3x3_algorithm_0 -pg 1 -lvl 2 -y 100 -defaultsOSRD
+preplace inst maxtri3x3_CannyNMS_0 -pg 1 -lvl 5 -y 170 -defaultsOSRD
+preplace inst canny_NonMaxSupp_0 -pg 1 -lvl 4 -y 170 -defaultsOSRD
+preplace inst img_edge_cut_0 -pg 1 -lvl 7 -y 190 -defaultsOSRD
+preplace inst maxtri3x3_shift_0 -pg 1 -lvl 1 -y 80 -defaultsOSRD
+preplace inst maxtri3x3_SobelDir_0 -pg 1 -lvl 3 -y 130 -defaultsOSRD
+preplace inst canny_HystThreshold_0 -pg 1 -lvl 6 -y 180 -defaultsOSRD
+preplace netloc maxtri3x3_CannyNMS_0_m_axis_line_buff_0 1 5 1 N
+preplace netloc maxtri3x3_CannyNMS_0_m_axis_line_buff_1 1 5 1 N
+preplace netloc sobel3x3_algorithm_0_m_axis_dir_GxGy 1 2 1 N
+preplace netloc s_axis_0_1 1 0 1 NJ
+preplace netloc maxtri3x3_CannyNMS_0_m_axis_line_buff_2 1 5 1 N
+preplace netloc edge_selelct_0_1 1 0 2 NJ 160 310J
+preplace netloc img_edge_cut_0_m_axis 1 7 1 N
+preplace netloc minVal_0_1 1 0 4 NJ 260 NJ 260 NJ 260 940J
+preplace netloc canny_NonMaxSupp_0_m_axis 1 4 1 N
+preplace netloc maxtri3x3_shift_0_m_axis_line_buff_0 1 1 1 N
+preplace netloc s_axis_aclk_0_1 1 0 7 10 170 300 200 620 210 920 290 1250 250 1540 270 1850J
+preplace netloc canny_HystThreshold_0_m_axis 1 6 1 N
+preplace netloc maxtri3x3_shift_0_m_axis_line_buff_1 1 1 1 N
+preplace netloc maxVal_0_1 1 0 4 NJ 240 NJ 240 NJ 240 930J
+preplace netloc enable_0_1 1 0 4 NJ 220 NJ 220 NJ 220 910J
+preplace netloc maxtri3x3_shift_0_m_axis_line_buff_2 1 1 1 N
+preplace netloc enable_0_2 1 0 7 10J 300 NJ 300 NJ 300 NJ 300 NJ 300 NJ 300 1860J
+preplace netloc maxtri3x3_SobelDir_0_m_axis_line_buff_0 1 3 1 N
+preplace netloc maxtri3x3_SobelDir_0_m_axis_line_buff_1 1 3 1 N
+preplace netloc maxtri3x3_SobelDir_0_m_axis_line_buff_2 1 3 1 N
+levelinfo -pg 1 -10 160 470 770 1100 1400 1700 1970 2100 -top 0 -bot 310
+",
+}
+0

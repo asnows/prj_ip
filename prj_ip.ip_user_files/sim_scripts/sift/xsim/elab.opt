@@ -1,0 +1,1 @@
+--relax --debug typical --mt auto -L xil_defaultlib -L fifo_generator_v13_2_2 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot sift xil_defaultlib.sift xil_defaultlib.glbl -log elaborate.log
